@@ -35,7 +35,7 @@ e.g.
   <tr>
     <td><tt>['oh-my-zsh']['branch']</tt></td>
     <td>String</td>
-    <td>oh-my-zsh branch/td>
+    <td>oh-my-zsh branch</td>
     <td><tt>master</tt></td>
   </tr>
 </table>
