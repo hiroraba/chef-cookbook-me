@@ -27,10 +27,16 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['ore']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['oh-my-zsh']['repo']</tt></td>
+    <td>String</td>
+    <td>oh-my-zsh repo</td>
+    <td><tt></tt></td>
+  </tr>
+  <tr>
+    <td><tt>['oh-my-zsh']['branch']</tt></td>
+    <td>String</td>
+    <td>oh-my-zsh branch/td>
+    <td><tt>master</tt></td>
   </tr>
 </table>
 
