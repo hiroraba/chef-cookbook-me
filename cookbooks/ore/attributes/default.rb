@@ -5,3 +5,5 @@ default["oh-my-zsh"]["branch"] = "master"
 
 default["plenv"]["repo"] = "git://github.com/tokuhirom/plenv.git"
 default["plenv"]["branch"] = "master"
+
+default["dot_cloud"]["repo"] = "dotcloud/lxc-docker"
