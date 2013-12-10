@@ -6,22 +6,27 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "opscode-ubuntu1204"
-  config.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-12.10_chef-provisionerless.box"
 
   config.omnibus.chef_version = :latest
   config.vm.synced_folder "./","/home/vagrant"
 
   config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = ["/Users/matsuohiroki/vagrant/docker/cookbooks"] 
+    chef.cookbooks_path = "cookbooks" 
     chef.run_list = ["recipe[ore::default]", 
       "recipe[ore::plenv]",
-      "recipe[ore::zsh]",
-      "recipe[ore::docker]"
+      "recipe[ore::zsh]"
     ]
+    chef.add_recipe "apt"
+  end
+
+  config.vm.provision "docker" do |d|
+    d.run "ubuntu",
+      cmd: "bash -l",
+      args: "-v '/vagrant:/var/www'"
   end
 
   config.vm.provider :virtualbox do |vb|
-    vb.name = "docker1"
+    vb.name = "docker2"
     vb.customize ["modifyvm", :id, "--memory", 1024]
   end
 
