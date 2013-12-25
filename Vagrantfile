@@ -26,10 +26,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       args: "-v '/vagrant:/var/www'"
   end
 
-  config.vm.provider :virtualbox do |vb|
-    vb.name = "docker2"
-    vb.customize ["modifyvm", :id, "--memory", 1024]
-  end
+  #config.vm.provider :virtualbox do |vb|
+  #  vb.name = "docker2"
+  #  vb.customize ["modifyvm", :id, "--memory", 1024]
+  #end
 
-  config.vm.network :private_network, ip: "192.168.33.32"
+  #config.vm.network :private_network, ip: "192.168.33.32"
 end
