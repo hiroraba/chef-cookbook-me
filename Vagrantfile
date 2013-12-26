@@ -8,9 +8,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "opscode-ubuntu1204"
   config.vm.box_url = "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-12.04_chef-provisionerless.box"
 
-  config.ssh.timeout = 10
   config.omnibus.chef_version = :latest
-  #config.vm.synced_folder "./","/home/vagrant"
+  config.vm.synced_folder "./","/home/vagrant"
 
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks" 
@@ -32,5 +31,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--memory", 1024]
   end
 
-  #config.vm.network :private_network, ip: "192.168.33.32"
+  config.vm.network :private_network, ip: "192.168.33.32"
 end
