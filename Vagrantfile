@@ -31,5 +31,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vb.customize ["modifyvm", :id, "--memory", 1024]
   end
 
-  config.vm.network :private_network, ip: "192.168.33.32"
+  #config.vm.network :private_network, ip: "192.168.33.32"
 end
