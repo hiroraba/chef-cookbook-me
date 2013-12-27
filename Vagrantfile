@@ -15,9 +15,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.cookbooks_path = "cookbooks" 
     chef.run_list = ["recipe[ore::default]", 
       "recipe[ore::plenv]",
-      "recipe[ore::zsh]"
+      "recipe[ore::zsh]",
+      "recipe[apt::default]"
     ]
-    chef.add_recipe "apt"
+    
   end
 
   config.vm.provision "docker" do |d|
